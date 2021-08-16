@@ -1,0 +1,74 @@
+.mw-btn{
+    position: relative;
+    border: $border-none;
+    @include button-size(1rem, 0.25rem, 1rem, 0.5rem);
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    background-color: transparent;
+    cursor: pointer;
+    &.disabled,
+    &[disabled]{
+        cursor: not-allowed;
+        opacity: 0.5;
+        box-shadow: none;
+      
+    }
+    > * {
+        pointer-events: none;
+    }
+    
+}
+
+.mw-btn-lg{
+    @include button-size(1.5rem, 0.375rem, 1.2rem, 0.75rem);
+    font-weight: 600
+
+}
+
+.mw-btn-sm{
+    @include button-size(0.75rem, 0.2rem, 0.75rem, 0.375rem);
+
+}
+
+.mw-btn-primary{
+    @include button-type($primary, $primary, $white, #7F21BD, #7F21BD, $white)
+
+}
+
+.mw-btn-danger{
+    @include button-type($danger, $danger, $white)
+
+}
+
+.mw-btn-default{
+    @include button-type($white, $black, $black, #f6f6f6, $black,$black);
+    border: 1px solid $black;
+
+}
+
+.mw-btn-link{
+    font-weight: 400;
+    color: blue;
+    text-decoration: none;
+    &:hover{
+        color: rgb(12, 148, 238);
+        text-decoration: underline;
+     
+    }
+    &:disabled,
+    &.disabled{
+        color: rgb(12, 148, 238);
+        pointer-events: none;
+
+    }
+    &:focus,
+    &.focus{
+        text-decoration: underline;
+
+
+    }
+}
+
