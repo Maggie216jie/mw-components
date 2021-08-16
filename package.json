@@ -13,6 +13,13 @@
     "UI",
     "React"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maggie216jie/mw-components"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@storybook/addon-docs": "^6.3.7",
     "@testing-library/jest-dom": "^5.14.1",
@@ -34,14 +41,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "clean": "rimraf ./build",
+    "clean": "rimraf ./dist",
     "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
   },
   "eslintConfig": {
     "extends": [
